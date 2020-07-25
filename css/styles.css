@@ -26,6 +26,7 @@ ul{
 li{
     display: block;
     color: #c7d2d3;
+    cursor: pointer;
 }
 .navbar li{
     display:inline-block;
@@ -33,6 +34,20 @@ li{
     color: #95a5a6;
     font-size: 1.1rem;
 }
+.navbar li:hover{
+    cursor: pointer;
+}
+.navbar li:hover::before{
+    display: block;
+    content: "";
+    width: 100%;
+    height: 3px;
+}
+.navbar li:hover{
+    border-bottom: 3px solid ;
+    border-image: linear-gradient(to left, #2ab6d9, #30d35c) 1;
+}
+
 .navbar img{
     display: inline-block;
     height: 1.5rem;
@@ -159,10 +174,25 @@ flex-basis: 50%;
     width: 250px;
     height: 190px;
     border-radius: 5px 5px 0 0;
+    transition: transform .4s ease;
+}
+.article img:hover{
+    transform: scale(1.1);
+    transition: transform .5s ease;
+    cursor: pointer;
 }
 .article-container{
     width: 80%;
     margin: auto;
+}
+
+.article-container h3{
+    transition: color .1s ease;
+}
+.article-container h3:hover{
+    color: #27ce96;
+    cursor: pointer;
+    transition: color .2s ease;
 }
 .articles h6, .articles p{
     color: #95a5a6;
@@ -210,11 +240,19 @@ footer{
 .left div ul li{
     margin-bottom: 1.4rem;
 }
+.left div ul li:hover{
+    color: #30d35c;
+    cursor: pointer;
+}
 .social-media{
     margin-top: 4rem;
 }
-.social-media img{
+.social-media svg{
     margin-right: .5rem;
+    cursor: pointer;
+}
+.social-media svg:hover path{
+    fill: #36db62;
 }
 .right{
     margin-top: 1rem;
